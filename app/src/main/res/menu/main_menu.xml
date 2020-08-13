@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/createBookingNavigation"
+            android:icon="@drawable/new_booking"
+            android:title="Create Booking" />
+        <item
+            android:id="@+id/historyNavigation"
+            android:icon="@drawable/history"
+            android:title="Your Trips" />
+        <item
+            android:id="@+id/logoutNavigation"
+            android:icon="@drawable/log_out"
+            android:title="Log out" />
+    </group>
+</menu>
