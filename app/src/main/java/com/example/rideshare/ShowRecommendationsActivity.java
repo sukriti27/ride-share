@@ -151,8 +151,10 @@ public class ShowRecommendationsActivity extends AppCompatActivity {
     public ArrayList<TripStop> getStopsForRoute(ArrayList<String> stopNamesInputOrder, JSONArray trips, JSONArray waypoints) throws JSONException {
         TripStop[] stops = new TripStop[stopNamesInputOrder.size()];
         for (int i = 0; i < waypoints.length(); i++) {
-            TripStop stop = new TripStop(stopNamesInputOrder.get(i), 0.0, 0.0);
-            stops[waypoints.getJSONObject(i).getInt("waypoint_index")] = stop;
+            if (waypoints.getJSONObject(i).getInt("trips_index") == 0) {
+                TripStop stop = new TripStop(stopNamesInputOrder.get(i), 0.0, 0.0);
+                stops[waypoints.getJSONObject(i).getInt("waypoint_index")] = stop;
+            }
         }
 
         JSONArray legs = trips.getJSONObject(0).getJSONArray("legs");
